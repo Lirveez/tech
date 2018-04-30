@@ -1,10 +1,8 @@
 package Task2;
         import org.json.*;
         import java.io.*;
-        import java.util.ArrayList;
-        import java.util.Arrays;
-        import java.util.Collections;
-        import java.util.Comparator;
+        import java.util.*;
+
 /**
  * Created by Lirveez on 30.04.2018.
  */
@@ -30,7 +28,7 @@ public class Parser {
                     columnNames.get(num).toString().equals("temperature")||
                 columnNames.get(num).toString().equals("salinity")) {
                 System.out.println("\"" + columnNames.get(num) + "\"" + ":{");
-                getAverage(rows, columnNames, num);
+                getData(rows, columnNames, num);
                 System.out.println("},");
             }
         }
@@ -38,20 +36,51 @@ public class Parser {
 
     }
 
-    public static void getAverage(JSONArray rows, JSONArray columnNames, int num) throws JSONException {
+    public static void getData(JSONArray rows, JSONArray columnNames, int num) throws JSONException {
         float average = 0;
+        String row = String.valueOf(rows.get(0));
+        String mas[] = row.split(",");
+        float min= Float.valueOf(mas[num]);
+        float max= Float.valueOf(mas[num]);
+
         ArrayList<Float> averageMass = new ArrayList<Float>();
+        ArrayList<String> dates = new ArrayList<>();
+        int dateindx = 0;
+        for (int i = 0; i< columnNames.length();i++){
+            row = String.valueOf(columnNames.get(i));
+            if (row.equals("time")){
+                dateindx = i;
+                break;
+            }
+        }
+        String min_time=String.valueOf(mas[dateindx])
+                ,max_time=String.valueOf(mas[dateindx]);
         for (int i = 0; i < rows.length(); i++){
-            String row = String.valueOf(rows.get(i));
+            row = String.valueOf(rows.get(i));
             String mass[] = row.split(",");
+            dates.add(String.valueOf(mass[dateindx]));
             if(check(row,columnNames,num)) {
+                if (Float.valueOf(mass[num])>max){
+                    max = Float.valueOf(mass[num]);
+                    max_time = String.valueOf(mass[dateindx]);
+                }
+                if (Float.valueOf(mass[num])<min){
+                    min = Float.valueOf(mass[num]);
+                    min_time = String.valueOf(mass[dateindx]);
+                }
                 averageMass.add(Float.valueOf(mass[num]));
                 average = average + averageMass.get(averageMass.size()-1);
             }
         }
         Collections.sort(averageMass);
-        System.out.println("\"min_" +columnNames.get(num) +"\":"+ averageMass.get(0));
-        System.out.println("\"max_" +columnNames.get(num) +"\":"+ averageMass.get(averageMass.size()-1));
+        Collections.sort(dates);
+        System.out.println("\"start_date\":"+dates.get(0).substring(0,11));
+        System.out.println("\"end_date\":"+"\""+dates.get(dates.size()-1)+"\"");
+        System.out.println("\"num_records\":"+averageMass.size());
+        System.out.println("\"min_" +columnNames.get(num) +"\":"+ min);
+        System.out.println("\"min_time_" +columnNames.get(num) +"\":"+ min_time);
+        System.out.println("\"max_" +columnNames.get(num) +"\":"+ max);
+        System.out.println("\"max_time_" +columnNames.get(num) +"\":"+ max_time);
         System.out.println("\"avg_" +columnNames.get(num) +"\":"+ average/averageMass.size());
     }
 
