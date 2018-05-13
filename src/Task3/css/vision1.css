@@ -1,0 +1,117 @@
+.body{
+    min-height: 100vh;
+    background-color: rgba(147, 147, 147, 1);
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBzdG9wLWNvbG9yPSIjYjliOWI5IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4wMDIiLz48c3RvcCBzdG9wLWNvbG9yPSIjOWM5YzljIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4xNTUiLz48c3RvcCBzdG9wLWNvbG9yPSIjOGI4YjhiIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4yODYwMDAwMDAwMDAwMDAwMyIvPjxzdG9wIHN0b3AtY29sb3I9IiM4MTgxODEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjQwMSIvPjxzdG9wIHN0b3AtY29sb3I9IiM3ZjdmN2YiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUxMiIvPjxzdG9wIHN0b3AtY29sb3I9IiM4MTgxODEiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjYzNCIvPjxzdG9wIHN0b3AtY29sb3I9IiM4YjhiOGIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjc1NCIvPjxzdG9wIHN0b3AtY29sb3I9IiM5YzljOWMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjg2NiIvPjxzdG9wIHN0b3AtY29sb3I9IiNiOWI5YjkiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjk5NDAwMDAwMDAwMDAwMDEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%,color-stop(0.002, rgb(185, 185, 185)),color-stop(0.155, rgb(156, 156, 156)),color-stop(0.286, rgb(139, 139, 139)),color-stop(0.401, rgb(129, 129, 129)),color-stop(0.512, rgb(127, 127, 127)),color-stop(0.634, rgb(129, 129, 129)),color-stop(0.754, rgb(139, 139, 139)),color-stop(0.866, rgb(156, 156, 156)),color-stop(0.994, rgb(185, 185, 185)));
+    /* Android 2.3 */
+    background-image: -webkit-linear-gradient(left,rgb(185, 185, 185) 0.2%,rgb(156, 156, 156) 15.5%,rgb(139, 139, 139) 28.6%,rgb(129, 129, 129) 40.1%,rgb(127, 127, 127) 51.2%,rgb(129, 129, 129) 63.4%,rgb(139, 139, 139) 75.4%,rgb(156, 156, 156) 86.6%,rgb(185, 185, 185) 99.4%);
+    /* IE10+ */
+    background-image: linear-gradient(to right,rgb(185, 185, 185) 0.2%,rgb(156, 156, 156) 15.5%,rgb(139, 139, 139) 28.6%,rgb(129, 129, 129) 40.1%,rgb(127, 127, 127) 51.2%,rgb(129, 129, 129) 63.4%,rgb(139, 139, 139) 75.4%,rgb(156, 156, 156) 86.6%,rgb(185, 185, 185) 99.4%);
+    background-image: -ms-linear-gradient(left,rgb(185, 185, 185) 0.2%,rgb(156, 156, 156) 15.5%,rgb(139, 139, 139) 28.6%,rgb(129, 129, 129) 40.1%,rgb(127, 127, 127) 51.2%,rgb(129, 129, 129) 63.4%,rgb(139, 139, 139) 75.4%,rgb(156, 156, 156) 86.6%,rgb(185, 185, 185) 99.4%);
+}
+div#chart_div {
+    margin-right: 0px;
+    padding-left: 10vw;
+    margin-bottom: 10vh;
+}
+.divbutton{
+    margin-top: 20px;
+    text-align: center;
+}
+btn{
+    width: 100px;
+}
+.form{
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border-width: 1px;
+    border-style: solid;
+    border-color: darkgrey;
+    background: white;
+    width: 50vw;
+    text-align: right;
+    display: inline-block;
+}
+.title{
+    text-align: center;
+    margin-top: 10vh;
+    /* height: 100vh; */
+}
+.lab{
+    font-size: 40px;
+}
+.name{
+    font-size: 35px;
+}
+.db{
+    font-size: 20px;
+}
+.menu-main {
+    list-style: none;
+    margin: 40px 0 5px;
+    padding: 25px 0 5px;
+    text-align: center;
+    color: white;
+}
+.menu-main li {display: inline-block;}
+.menu-main li:after {
+    content: "|";
+    color: white;
+    display: inline-block;
+    vertical-align:top;
+}
+.menu-main li:last-child:after {content: none;}
+.menu-main a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: white;
+    display: inline-block;
+    transition: color .2s;
+}
+.menu-main a, .menu-main a:visited {color: black;}
+.menu-main a.current, .menu-main a:hover{color: white;}
+.menu-main a:before,
+.menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background: white;
+    transition: .8s;
+}
+.menu-main a:hover:before, .menu-main .current:before {left: 0;}
+.menu-main a:hover:after, .menu-main .current:after {right: 0;}
+.suggestionsBox {
+    position: relative;
+    left: 30px;
+    margin: 10px 0px 0px 0px;
+    width: 200px;
+    background-color: #212427;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border: 2px solid #000;
+    color: #fff;
+}
+
+.suggestionList {
+    margin: 0px;
+    padding: 0px;
+}
+
+.suggestionList li {
+    margin: 0px 0px 3px 0px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.suggestionList li:hover {
+    background-color: #659CD8;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <style>
+
+    li{
+        margin-bottom: 20px;
+    }
+
+    li:hover{
+        cursor: pointer;
+    }
+    body{
+        background: blue;
+    }
+        #result_form{
+            text-align: center;
+        }
+    </style>
+
+    <title>Матюшин Дмитрий</title><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery.modal.css">
+    <script language="JavaScript" type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+    </script>
+    <script src="js/ajax.js"></script>
+    <script>
+        function searchElement(){
+            $.ajax({
+                url:     "../php/searchLayout.php", //url страницы (action_ajax_form.php)
+                success: function(response) { //Данные отправлены успешно
+                    result = response;
+                    $('#result_form').html(result);
+                },
+                error: function(response) { // Данные не отправлены
+                    $('#result_form').html('Ошибка. Данные не отправлены.');
+                }
+            });
+        }
+        function newElement(){
+            $.ajax({
+                url:     "../php/newLayout.php", //url страницы (action_ajax_form.php)
+                success: function(response) { //Данные отправлены успешно
+                    result = response;
+                    $('#result_form').html(result);
+                },
+                error: function(response) { // Данные не отправлены
+                    $('#result_form').html('Ошибка. Данные не отправлены.');
+                }
+            });
+        }
+        function changeElement(){
+            $.ajax({
+                url:     "../php/changeLayout.php", //url страницы (action_ajax_form.php)
+                success: function(response) { //Данные отправлены успешно
+                    result = response;
+                    $('#result_form').html(result);
+                },
+                error: function(response) { // Данные не отправлены
+                    $('#result_form').html('Ошибка. Данные не отправлены.');
+                }
+            });
+        }
+        function del(){
+            $.ajax({
+                url:     "../php/delLayout.php", //url страницы (action_ajax_form.php)
+                success: function(response) { //Данные отправлены успешно
+                    result = response;
+                    $('#result_form').html(result);
+                },
+                error: function(response) { // Данные не отправлены
+                    $('#result_form').html('Ошибка. Данные не отправлены.');
+                }
+            });
+        }
+    </script>
+</head>
+
+<body style="background: #659CD8">
+<ul class="menu-main">
+    <li><a onclick="allElements()">Все записи</a></li>
+    <li><a onclick="searchElement()">Вывод одной записи</a></li>
+    <li><a onclick="changeElement()" >Изменить запись</a>
+    <li><a onclick="del()" >Удалить запись</a></li>
+    <li><a onclick="newElement()" >Добавить запись</a>
+
+</ul>
+
+    <div id="result_form">
+
+    </div>
+</body>
+</html>
