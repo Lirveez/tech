@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF8">
+<html>
+<head>
+    <title>Курс валют</title>
+    <style>
+        .body{
+    background: grey;}
+    .txt{
+        margin-top: 30%;
+        text-align: center;
+
+    }
+    .title{
+    font-size: 30px;
+        font-weight: bold;
+    }
+    p{
+        font-size: 20px;
+    }
+    </style>
+    <script>
+        const socket = new WebSocket("ws://127.0.0.1:159/event/");
+        const currencies = {'BTC':'Биткоин','ETH':'Эфир','EUR':'Евро','LTC':'Лайткоин','USD':'Доллар'};
+        socket.onmessage = function(event) {
+            console.log("Получены данные " + event.data);
+            var data = JSON.parse(event.data);
+            for (val in data)
+            {
+                document.getElementById(val).innerHTML = currencies[val]+": "+data[val]+" ₽";
+            }
+        };
+    </script>
+</head>
+<body class="body">
+<div class="txt">
+    <p class="title">Текущий курс</p>
+    <p id = 'EUR'>Евро: </p>
+    <p id = 'USD'>Доллар: </p>
+    <p id = 'BTC'>Биткоин: </p>
+    <p id = 'LTC'>Лайткоин: </p>
+    <p id = 'ETH'>Эфир: </p>
+</div>
+
+</body>
+</html>
